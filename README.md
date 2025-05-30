@@ -93,3 +93,4 @@ Managing medical records across multiple hospitals and clinics is a significant 
 ## Contact
 For queries or contributions, contact **[jagerjackson001@gmail.com]** or open an issue in the repository.
 
+## Codium Preview Enabled
