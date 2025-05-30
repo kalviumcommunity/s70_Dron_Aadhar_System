@@ -1,0 +1,21 @@
+meta {
+  name: New save
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5000/api/records
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "aadhaarNumber": "123456789012",
+    "name": "Ravi Kumar",
+    "age": 30,
+    "medicalHistory": ["Diabetes", "Allergy"]
+  }
+  
+}

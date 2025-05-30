@@ -1,13 +1,19 @@
 const Record = require("../models/recordModel");
 
-// GET all records
-const getAllRecords = async (req, res) => {
+const addRecord = async (req, res) => {
   try {
-    const records = await Record.find();
-    res.status(200).json(records);
+    const { aadhaarNumber, name, age, medicalHistory } = req.body;
+    const newRecord = new Record({ aadhaarNumber, name, age, medicalHistory });
+    await newRecord.save();
+    res.status(201).json({ message: "Record added", record: newRecord });
   } catch (err) {
-    res.status(500).json({ message: "Failed to fetch records" });
+    res.status(500).json({ message: "Error", error: err.message });
   }
 };
 
-module.exports = { getAllRecords };
+const getAllRecords = async (req, res) => {
+  const records = await Record.find();
+  res.json(records);
+};
+
+module.exports = { getAllRecords, addRecord };
