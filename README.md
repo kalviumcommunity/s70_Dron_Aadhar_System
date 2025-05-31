@@ -110,3 +110,6 @@ Use this base URL to make API requests, such as:
 - `PUT /api/records/:id`
 - `DELETE /api/records/:id`
 
+## NOTE : > Root route ("/") shows "Cannot GET /" because this is a backend API server. Please use API endpoints like `/api/records` to interact with the server.
+ 
+
