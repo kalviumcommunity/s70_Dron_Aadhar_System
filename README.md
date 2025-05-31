@@ -111,5 +111,15 @@ Use this base URL to make API requests, such as:
 - `DELETE /api/records/:id`
 
 ## NOTE : > Root route ("/") shows "Cannot GET /" because this is a backend API server. Please use API endpoints like `/api/records` to interact with the server.
+
+---
+
+## 🌐 Deployed Frontend URL
+
+The frontend is live and deployed at the following link:
+
+👉 [https://relaxed-pika-2c32f9.netlify.app](https://relaxed-pika-2c32f9.netlify.app)
+
+This is the user-facing React + Vite interface for securely accessing Aadhar-linked health records.
  
 
