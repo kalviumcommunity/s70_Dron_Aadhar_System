@@ -4,7 +4,8 @@
   "description": "The **Aadhar-Linked Digital Health Record System** is a secure and scalable platform designed to store, manage, and retrieve medical records efficiently. By integrating with **Aadhar authentication**, users can securely access their complete medical history, including past diagnoses, prescriptions, and test reports, while ensuring **privacy, security, and seamless healthcare provider access**.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
