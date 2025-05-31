@@ -3,8 +3,14 @@ const Record = require("../models/recordModel");
 // Add new record
 const addRecord = async (req, res) => {
   try {
-    const { aadhaarNumber, name, age, medicalHistory } = req.body;
-    const newRecord = new Record({ aadhaarNumber, name, age, medicalHistory });
+    const { aadhaarNumber, name, age, medicalHistory, userId } = req.body;
+    const newRecord = new Record({
+      aadhaarNumber,
+      name,
+      age,
+      medicalHistory,
+      user: userId
+    });
     await newRecord.save();
     res.status(201).json({ message: "Record added", record: newRecord });
   } catch (err) {
@@ -14,7 +20,7 @@ const addRecord = async (req, res) => {
 
 // Get all records
 const getAllRecords = async (req, res) => {
-  const records = await Record.find();
+  const records = await Record.find().populate("user");
   res.json(records);
 };
 
