@@ -9,6 +9,13 @@ const recordSchema = new mongoose.Schema({
   name: String,
   age: Number,
   medicalHistory: [String],
+
+
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",  
+    required: true
+  }
 });
 
 module.exports = mongoose.model("Record", recordSchema);
