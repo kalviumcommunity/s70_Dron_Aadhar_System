@@ -94,3 +94,22 @@ Managing medical records across multiple hospitals and clinics is a significant 
 For queries or contributions, contact **[jagerjackson001@gmail.com]** or open an issue in the repository.
 
 ## Codium Preview Enabled
+
+
+
+## 🌐 Deployed Backend URL
+
+The backend server is deployed and live at the following URL:
+
+👉 [https://s70-dron-aadhar-system.onrender.com](https://s70-dron-aadhar-system.onrender.com)
+
+Use this base URL to make API requests, such as:
+
+- `GET /api/records`
+- `POST /api/records`
+- `PUT /api/records/:id`
+- `DELETE /api/records/:id`
+
+## NOTE : > Root route ("/") shows "Cannot GET /" because this is a backend API server. Please use API endpoints like `/api/records` to interact with the server.
+ 
+

@@ -1,0 +1,24 @@
+meta {
+  name: Update Record
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://localhost:5000/api/record/683a401cd64deafb2397f34f
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Updated Name",
+    "age": 35,
+    "medicalHistory": ["Diabetes", "BP"]
+  }
+  
+}

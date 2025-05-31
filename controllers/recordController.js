@@ -1,5 +1,6 @@
 const Record = require("../models/recordModel");
 
+// Add new record
 const addRecord = async (req, res) => {
   try {
     const { aadhaarNumber, name, age, medicalHistory } = req.body;
@@ -11,9 +12,26 @@ const addRecord = async (req, res) => {
   }
 };
 
+// Get all records
 const getAllRecords = async (req, res) => {
   const records = await Record.find();
   res.json(records);
 };
 
-module.exports = { getAllRecords, addRecord };
+// ✅ Update record (PUT API)
+const updateRecord = async (req, res) => {
+  const id = req.params.id;
+  const updatedData = req.body;
+
+  try {
+    const updatedRecord = await Record.findByIdAndUpdate(id, updatedData, { new: true });
+    if (!updatedRecord) {
+      return res.status(404).json({ message: "Record not found" });
+    }
+    res.status(200).json({ message: "Record updated", record: updatedRecord });
+  } catch (error) {
+    res.status(500).json({ error: "Update failed", details: error.message });
+  }
+};
+
+module.exports = { getAllRecords, addRecord, updateRecord };
