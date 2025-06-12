@@ -7,4 +7,4 @@ router.get("/records", getAllRecords);
 router.post("/records", addRecord);        
 router.put("/record/:id", updateRecord);   // ✅ PUT route for updating record
 
-module.exports = router;
+module.exports = router ;
