@@ -40,4 +40,24 @@ const updateRecord = async (req, res) => {
   }
 };
 
-module.exports = { getAllRecords, addRecord, updateRecord };
+// ✅ Delete record (DELETE API)
+const deleteRecord = async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const deletedRecord = await Record.findByIdAndDelete(id);
+    if (!deletedRecord) {
+      return res.status(404).json({ message: "Record not found" });
+    }
+    res.status(200).json({ message: "Record deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Delete failed", details: error.message });
+  }
+};
+
+module.exports = {
+  getAllRecords,
+  addRecord,
+  updateRecord,
+  deleteRecord, // ✅ Export kiya
+};
